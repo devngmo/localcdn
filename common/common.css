@@ -1,0 +1,28 @@
+.imgone {
+    display:none!important;
+}
+
+.nosel {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.h-flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.v-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.w100 {
+	width : 100%;
+}
+
+.f1 {
+	flex: 1;
+}
+
