@@ -1,0 +1,24 @@
+.tagfilter {
+	
+}
+
+.view-filtered-tags {
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 4px;
+	min-height: 50px;
+}
+
+.view-filtered-tags .view-tag-item {
+	border-radius: 4px;
+	padding: 4px;
+	display: inline-block;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+
+.view-filtered-tags .view-tag-item:hover::after {
+	content: 'x';
+	color: red;
+	padding: 6px;
+}
