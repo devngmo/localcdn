@@ -1,6 +1,6 @@
 Vue.component('wsb_tabs', {
 	template:`
-<div>
+<div class="v-flex f1">
 <ul class="nav nav-tabs wsb_tabs" role="tablist" :name="name">
 	<li class="nav-item" v-for="tab in tabs">
 		<a :class="['nav-link', active_tab==tab.id?'active':'']" 
@@ -9,17 +9,17 @@ Vue.component('wsb_tabs', {
 </ul>
 
 
-<div class="tab-content" id="nav-tabs-categories-content">
-	<div class="tab-pane show active" id="tab_content_tasknow" role="tabpanel" aria-labelledby="tasknow-tab">
-		<wsb_tasknow></wsb_tasknow>
+<div class="tab-content v-flex h100" id="nav-tabs-categories-content">
+	<div class="v-flex tab-pane show active h100" id="tab_content_tasknow" role="tabpanel" aria-labelledby="tasknow-tab">
+		<wsb_tasknow ref="tasknow"></wsb_tasknow>
 	</div>
 
-	<div class="tab-pane fade " id="tab_content_docs" role="tabpanel" aria-labelledby="docs-tab">
+	<div class="v-flex tab-pane fade  h100" id="tab_content_docs" role="tabpanel" aria-labelledby="docs-tab">
 		<wsb_docs></wsb_docs>
 	</div>
 	
-	<div class="tab-pane fade" id="tab_content_projects" role="tabpanel" aria-labelledby="projects-tab">
-		<wsb_projects></wsb_projects>
+	<div class="v-flex tab-pane fade h100" id="tab_content_projects" role="tabpanel" aria-labelledby="projects-tab">
+		<wsb_projects ref="project_list"></wsb_projects>
 	</div>
 </div>
 				

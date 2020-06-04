@@ -1,0 +1,246 @@
+html, body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.app-view {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.v-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.h-flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.f1 {
+	flex: 1;
+}
+
+.bsf-control {
+	display: block;
+	width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-clip: padding-box;
+	border: 1px solid #aaa;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.bsf-control:focus {
+	outline: 0 0 0 0.2rem rgba(0,123,255,.25);
+	border-color: #80bdff;
+}
+
+.step-list-container {
+	flex: 1;
+	overflow-y: scroll;
+}
+
+
+.guide-step {
+
+}   
+
+.search-result {
+
+}
+.view-title {
+	display: flex;
+	flex-direction: row;
+}
+.view-title div {
+	padding: 10px;
+	background-color: rgb(0, 110, 255);
+	color: #fff;
+	flex: 1;
+	display: inline-block;
+}
+#task-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+#guideline-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+#bookmark-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.task-content-viewer {
+	margin:2px;
+	
+	padding: 2px;
+	flex: 1;
+}
+
+.task-content-edit {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.bot-toolbar {
+	padding: 2px;
+}
+
+.h100 {
+	height: 100%;
+}
+.w100 { 
+	width: 100%;
+}
+
+.list-group-item.selected {
+	font-weight: bold;
+	
+ }
+ .line-through {
+	text-decoration: line-through;
+ }
+ 
+.cs-ignore {
+	color: #888;
+	background-color: #eee;
+}
+
+.cs-suggest {
+	color: #222;
+	background-color: #f5bcff;
+}
+
+.cs-active {
+	color: #222;
+	background-color: #fff;
+}
+
+.cs-pending {
+	color: #fff;
+	background-color: orange;
+}
+
+.cs-success {
+	color: #fff;
+	background-color: green;
+}
+
+.cs-danger {
+	color: #fff;
+	background-color: #f77272;
+}
+
+.cs-pr-urgent {
+	color: #fff;
+	background-color: #f77272;
+}
+
+.cs-pr-high {
+	color: #fff;
+	background-color: orange;
+}
+.cs-pr-medium {
+	color: blue;
+	background-color: #ffe3af;
+}
+
+.cs-pr-normal {
+	color: #222;
+	background-color: ffe;
+}
+
+.cs-pr-low {
+	color: #ddd;
+	background-color: #aaa;
+}
+
+select.compact {
+	display: inline-block!important;
+	width: auto!important;
+}
+
+div.compact {
+	display: inline-block!important;
+	width: auto!important;
+	margin: 4px 6px;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+
+.task-list {
+	background-color: #ddd;
+}
+
+.wsb_tasklist {
+	flex: 1;
+	overflow-y: scroll;
+}
+
+.task-card {
+	display: flex;
+	flex-direction: row;
+	margin: 4px;
+	padding: 0px;
+	border-radius: 6px;
+	border: 1px solid #eee;
+}
+
+.task-card .hashtag {
+	padding: 10px;
+	border-right: 1px solid #eee;
+}
+
+.task-card .title {
+	padding: 10px;
+	flex: 1;
+}
+
+
+.task-card .status-ico {
+	padding: 4px;
+	margin: auto;
+	text-align: center;
+}
+
+
+.prj-card {
+	display: flex;
+	flex-direction: row;
+	margin: 4px;
+	padding: 0px;
+	border-radius: 6px;
+	border: 1px solid #eee;
+}
+
+.prj-card .prjcode {
+	padding: 10px;
+	border-right: 1px solid #eee;
+	background-color: #007bff;
+	color: #fff;
+}
+.prj-card .title {
+	padding: 10px;
+	flex: 1;
+}
+
+
+.prj-card .status-ico {
+	padding: 4px;
+	margin: auto;
+	text-align: center;
+}

@@ -22,3 +22,12 @@
 	color: red;
 	padding: 6px;
 }
+
+.tag-item {
+	display: inline-block;
+	border: 1px solid #aaa;
+	padding: 8px;
+	font-size: 14pt;
+	margin: 4px;
+	border-radius: 4px;
+}
