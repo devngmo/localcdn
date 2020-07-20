@@ -1,5 +1,7 @@
 const api  = {
-	baseURL: 'http://127.0.0.1:12345',
+    baseURL: 
+        'http://127.0.0.1:12345'
+    ,
 	filterTasks: function(filter) {
 		console.log(`[API-filterTasks]`);
 		console.log(JSON.stringify(filter, indent=2));

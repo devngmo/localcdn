@@ -1,0 +1,7 @@
+[
+    { "id": "todolist", "name":"Todolist", "favorite" : 1, "cat":"tool" },
+    { "id": "pokemon", "name":"Pokemon", "favorite" : 1, "cat":"game" },
+    { "id": "beauty_camera", "name":"Beauty Camera", "favorite" : 1, "cat":"tool" },
+    { "id": "pug", "name":"Pug", "favorite" : 1, "cat":"game" },
+    { "id": "zombie_rush", "name":"Zombie Rush", "favorite" : 1, "cat":"game" }
+]

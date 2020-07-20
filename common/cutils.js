@@ -87,6 +87,9 @@ function guid() {
 $.fn.modal.Constructor.prototype._enforceFocus = function() {};
 
 function getEntityPrimaryKey(ent) {
+    if (ent === null || ent === undefined) return null;
+    if (ent.props === null || ent.props === undefined) return null;
+    
     for (let index = 0; index < ent.props.length; index++) {
         const prop = ent.props[index];
         if (prop.type === 'autonum') {
@@ -127,6 +130,7 @@ function compileRefs(entities) {
                     var refEntID = p.type.substring(5);
                     var refEnt = entMap[refEntID];
                     var refEntKey = getEntityPrimaryKey(refEnt);
+                    if (refEntKey === null) return;
                     //console.log(`foreign key: ${refEntID}.${refEntKey.name} ${refEntKey.type} `);
                     p.refType = refEntKey.refType;
                 }

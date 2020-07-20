@@ -1,0 +1,10 @@
+.appcard {
+    margin : 4px;
+    padding: 4px;
+    border-radius : 6px;
+    border: 1px solid #aaa;
+}
+
+.appcard .name {
+    font-weight: bold;
+}
