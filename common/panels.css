@@ -1,0 +1,40 @@
+.panel {
+	margin: 4px;
+}
+
+.rborder-s {
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+
+.rborder-m {
+	border: 1px solid #eee;
+	border-radius: 8px;
+}
+
+.rborder-lg {
+	border: 1px solid #eee;
+	border-radius: 12px;
+}
+
+
+.panel-compact {
+	border: 1px solid #eee;
+	padding: 2px;
+	
+}
+
+.panel-header {
+	background-color: #179ede;
+	color: #fff;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	line-height: 2em;
+	padding: 4px;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.panel-body {
+	padding : 4px;
+}

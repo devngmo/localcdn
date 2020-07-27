@@ -1,0 +1,59 @@
+html, body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.app-view {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.view-title {
+	display: flex;
+	flex-direction: row;
+}
+.view-title div {
+	padding: 10px;
+	background-color: rgb(0, 110, 255);
+	color: #fff;
+	flex: 1;
+	display: inline-block;
+}
+#note-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.note-content-viewer {
+	margin:2px;
+	background-color: #eee;
+	padding: 2px;
+	flex: 1;
+	overflow-y:scroll;
+}
+
+.note-content-edit {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	overflow-y:scroll;
+}
+
+.bot-toolbar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 2px;
+}
+
+.w100 { 
+	width: 100%;
+}
+
+.list-group-item.selected {
+	font-weight: bold;
+	
+ }

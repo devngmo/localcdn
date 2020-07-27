@@ -1,0 +1,5 @@
+const JSDevice = {
+	playTapSound: function() {
+		
+	}
+};

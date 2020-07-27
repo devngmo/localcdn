@@ -138,3 +138,18 @@ function compileRefs(entities) {
         });
     });
 }
+
+
+function copyProps(fromA, toB, copyAll = false) {
+	if (copyAll) {
+		Object.keys(fromA).map(key => {
+			toB[key] = fromA[key];
+		});
+	}
+	else {
+		Object.keys(toB).map(key => {
+			if (fromA[key] !== undefined)
+				toB[key] = fromA[key];
+		});
+	}
+}
