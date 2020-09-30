@@ -1,0 +1,50 @@
+.sidebar {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: #fff;
+	border: 1px solid #aaa;
+}
+
+.sidebar.hide {
+	display: none;
+}
+
+.sidebar.w-25 {
+	width: 25%;
+}
+
+.sidebar.w-80 {
+	width: 80%;
+}
+
+.sidebar.show {
+	display: block;
+}
+
+.sidebar.dock-left {
+	float: left;
+	left: 0;
+}
+
+.sidebar.dock-right {
+	float: right;
+	right: 0;
+}
+
+
+.sidebar-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top : 0;
+	bottom: 0;
+	background-color: #0002;
+}
+
+.sidebar-overlay.hide {
+	display: none;
+}

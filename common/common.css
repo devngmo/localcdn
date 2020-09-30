@@ -8,25 +8,11 @@
     user-select: none;
 }
 
-.h-flex {
-	display: flex;
-	flex-direction: row;
-}
 
-.v-flex {
-	display: flex;
-	flex-direction: column;
-}
 
 .w100 {
 	width : 100%;
 }
-
-.f1 {
-	flex: 1;
-}
-
-
 
 .badge {
 	display: inline-block;
@@ -61,3 +47,4 @@
 .pull-right {
 	float : right;
 }
+

@@ -1,0 +1,23 @@
+.full-screen {
+	height: 100%;
+	width: 100%;
+}
+
+.dock-fill {
+	display: block;
+	flex: 1;
+}
+
+.h-flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.v-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.f1 {
+	flex: 1;
+}
