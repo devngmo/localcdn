@@ -48,3 +48,16 @@
 	float : right;
 }
 
+.h-flex { 
+    display: flex;
+    flex-direction: row;
+}
+
+.v-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.f1 {
+	flex : 1;
+}

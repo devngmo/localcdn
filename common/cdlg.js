@@ -14,6 +14,10 @@ function showObjectEditor(model, onConfirm) {
 	
 	if (dlg.length === 0) {
 		let dlgContainer = $('#cdlg-container');
+        if (dlgContainer.length === 0) {
+            console.error('CDLG required an element with ID "cdlg-container" has been defined in body => you are missing this!!!');
+            return;
+        }
 		let objEditorHTML = `
 <div class="modal" tabindex="-1" role="dialog" id="dlg-obj-editor">
   <div class="modal-dialog" role="document">
@@ -63,21 +67,27 @@ function showObjectEditor(model, onConfirm) {
         if ('type' in f) {
             //TODO: implement checkbox
 			if (f.type === 'select') {
-                html += `<div class="input-group field-${f.id}">`;
+                html += `<div class="input-group field-${f.id}  mb-3">`;
                 html += `	<div class="input-group-prepend"><label class="input-group-text">${f.caption}</label></div>`;
-                html += `	<select class="custom-select" id="${f.id}">`;
+                let lock_setting = '';
+                if (f.locked)
+                    lock_setting = 'disabled';
+                html += `	<select class="custom-select" id="${f.id}" ${lock_setting}>`;
                 for (var i=0; i<f.items.length; i++) {
                     var item = f.items[i];
                     var itemid = item[f.key_id];
                     var itemtext = item[f.key_text];
-                    html += `<option :value="${itemid}">${itemtext}</option>`;
+                    if (f.selected === itemid)
+                        html += `<option selected value="${itemid}">${itemtext}</option>`;
+                    else
+                        html += `<option value="${itemid}">${itemtext}</option>`;
                 }
 				html += '	</select>';
                 html += '</div>';
                 continue;
             }
             else if (f.type === 'picklist') {
-                html += `<div class="input-group field-${f.id}">`;
+                html += `<div class="input-group field-${f.id}  mb-3">`;
                 html += `<div><label>${f.caption}</label></div>`;
                 html += '<div class="modal-picklist big">' +
                     '<ul class="list-group">';
@@ -95,7 +105,8 @@ function showObjectEditor(model, onConfirm) {
                 }
                 html += '</div>';
                 continue;
-            } else if (f.type === 'textbox') {
+            } 
+            else if (f.type === 'textbox') {
                 html +=
                     `<div class="input-group field-${f.id} mb-3">` +
                     `    <div class="input-group-prepend">` +
@@ -163,7 +174,8 @@ function showObjectEditor(model, onConfirm) {
 	}
 	btnDelete.on('click',  () => {
 		console.log('[OBJ-EDITOR] do DELETE');
-        JSDevice.playTapSound();
+        if (typeof JSDevice !== 'undefined')
+            JSDevice.playTapSound();
 		let handled = onConfirm('delete');
 		if (handled) {
 			dlg.modal('hide');
@@ -175,7 +187,8 @@ function showObjectEditor(model, onConfirm) {
     btnOK.off('click');
     btnOK.on('click', function () {
         console.log('[OBJ-EDITOR] do save');
-        JSDevice.playTapSound();
+        if (typeof JSDevice !== 'undefined')
+            JSDevice.playTapSound();
         var fields = {};
         for (var i in model.fields) {
             var f = model.fields[i];
@@ -248,4 +261,44 @@ function showMsgboxDialog(title, msg) {
     dlg.find('.modal-title').text(title);
     dlg.find('.modal-body').empty().append(msg);
     dlg.modal('show');
+}
+
+
+function showProgressDialog(title, msg) {
+    let dlg = $('#cdlg-progress');
+	if (dlg.length === 0) {
+		let dlgContainer = $('#cdlg-container');
+		let msgboxHTML = `
+<div class="modal" tabindex="-1" role="dialog" id="cdlg-progress" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 0px">
+        <div class="spinner-border" role="status">
+            <span class="modal-msg sr-only">Loading...</span>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</div>		
+		`;
+		dlgContainer.append(msgboxHTML);
+		dlg = $('#cdlg-progress');
+	}
+	console.log('show msg');
+    dlg.find('.modal-title').text(title);
+    dlg.find('.modal-msg').empty().append(msg);
+    dlg.modal('show');
+}
+
+function closeProgressDialog() {
+    let dlg = $('#cdlg-progress');
+	if (dlg.length === 0) return;
+    dlg.modal('hide');
 }

@@ -34,8 +34,9 @@ class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
 
 def serve_on_port(port):
+    print('serve in port: %d' % port)
     server = ThreadingHTTPServer(("localhost",port), CORSRequestHandler)
     server.serve_forever()
 
-Thread(target=serve_on_port, args=[1111]).start()
-serve_on_port(8000)
+Thread(target=serve_on_port, args=[8000]).start()
+#serve_on_port(8000)

@@ -25,7 +25,10 @@ function SandboxCollection(name) {
 		},
 		doc: function(docid) {
 			return SandboxCollectionDocument(this.name, docid);
-		}
+		},
+        save: function(doc) {
+            return SandboxCollectionDocument(this.name, doc._id).save(doc);
+        }
 	};
 }
 

@@ -153,3 +153,70 @@ function copyProps(fromA, toB, copyAll = false) {
 		});
 	}
 }
+
+
+function JsonSearchModel(parent, key, value, recursive=false, limit=1, founds = []) {
+    
+    if (parent === null || parent === undefined) return founds;
+    if (typeof parent !== 'object') return founds;
+    
+    if (Array.isArray(parent)) {
+        for(let i = 0; i < parent.length; i++) {
+            JsonSearchModel(parent[i], key, value, recursive, limit, founds);
+        }
+        return founds;
+    }
+    
+    if (parent[key] === value) {
+        founds.push(parent);
+        if (founds.length === limit) return founds;
+    }
+    if (!recursive) return founds;
+    
+    let keys = Object.keys(parent);
+    for(let i = 0; i < keys.length; i++) {
+        JsonSearchModel(parent[keys[i]], key, value, recursive, limit, founds);
+    }
+    return founds;
+}
+
+function JsonSearchIndex(array, key, value) {
+    for(let i = 0; i < array.length; i++) {
+        let item = array[i];
+        if (item[key] === value) return i;
+    }
+    return -1;
+}
+
+
+function JsonGet(model, key, defaultValue) {
+    if (typeof model[key] === undefined) return defaultValue;
+    return model[key];
+}
+
+
+
+function getSinceTime(timepoint) {
+	var now = moment();
+	var diff = moment.duration(now.diff(timepoint));
+	let secs = diff._milliseconds / 1000;
+
+	return diff.humanize() + ' ago';
+}
+
+function combineURL(a, b) {
+	if (a.endsWith('/')) {
+		if (b.startsWith('/')) {
+			if (b.length > 1)
+				return a + b.substring(1);
+			return a;
+		}
+		return a + b;
+	}
+	else {
+		if (b.startsWith('/')) {
+			return a + b;
+		}
+		return a + '/' + b;
+	}
+}
